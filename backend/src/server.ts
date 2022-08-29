@@ -10,17 +10,17 @@ app.use(cors());
 
 app.use(router);
 
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => 
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   if(err instanceof Error){
-    return res.status(400)json({
+    return res.status(400).json({
       error: err.message
     })
   }
   return res.status(500).json({
-    status: 'error';
+    status: 'error',
     message: 'Internal server error'
   })
-)
+})
 
 app.listen(3333, () => console.log('Server Online'))
 
