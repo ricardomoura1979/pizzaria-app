@@ -5,7 +5,7 @@ class CreateUserController{
   async handle(req: Request, res: Response){
     const { name, email, password } = req.body;
 
-    const createUserService = new CreateUserService();
+    const createUserService = new CreateUserService(); // inicializa o serviço e repassa para createuserservice
 
     const user = await createUserService.execute({
       name,
