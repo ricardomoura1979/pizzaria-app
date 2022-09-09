@@ -9,7 +9,7 @@ interface UserRequest {
 }
 
 class CreateUserService {
-  async execute({ name, email, password }: UserRequest) {
+  async execute({name, email, password}: UserRequest) {
 
     //verificar se o email foi enviado
     if (!email) {
